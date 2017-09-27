@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import calcoo
 
-class CalculadoraHija():
+class CalculadoraHija(calcoo.Calculadora):
 	def __init__(self, arg):
 		pass
 
@@ -25,9 +26,9 @@ if __name__ == '__main__':
 		sys.exit("Los operandos tienen que ser enteros")
 
 	if operador == "suma":
-		resultado = 
+		resultado = CalculadoraHija().suma(operando1,operando2)
 	elif operador == "resta":
-		resultado = 
+		resultado = CalculadoraHija().resta(operando1,operando2)
 	elif operador == "multiplica":
 		resultado = CalculadoraHija().multiplica(operando1,operando2)
 	elif operador == "divide":
