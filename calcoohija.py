@@ -12,9 +12,9 @@ class CalculadoraHija(calcoo.Calculadora):
 		return operando1 * operando2
 
 	def divide(self,operando1,operando2):
-		try 
+		try:
 			return operando1 / operando2
-		except ZeroDivisionError
+		except ZeroDivisionError:
 			sys.exit("No se puede dividir entre 0") 
 
 if __name__ == '__main__':
@@ -24,6 +24,7 @@ if __name__ == '__main__':
 
 	except ValueError:
 		sys.exit("Los operandos tienen que ser enteros")
+	operador = sys.argv[2]
 
 	if operador == "suma":
 		resultado = CalculadoraHija().suma(operando1,operando2)
