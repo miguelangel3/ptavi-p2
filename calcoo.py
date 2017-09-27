@@ -9,13 +9,25 @@ class Clase(Calculadora):
 	def __init__(self, valor):
     "Esto es el método iniciliazador"
     self.atributo = valor
-    def __suma__(self,operando1,operando2):
+    def suma (self,operando1,operando2):
     	return operando1 + operando2
 
-    def __resta__(self,operando1,operando2):
-    	return opernado1 - operando2
+    def resta (self,operando1,operando2):
+    	return operando1 - operando2
 
 if __name__ == "__main__":
-  objeto = Clase("pepe") # Creo un objeto de la clase Clase
-                         # y le paso el valor pepe para su
-                         # atributo en la inicialización
+  
+	try:
+    	operando1 = int(sys.argv[1])
+        operando2 = int(sys.argv[3])
+    except ValueError:
+        sys.exit("Error: Non numerical parameters")
+
+    if sys.argv[2] == "suma":
+        result = suma(operando1, operando2)
+    elif sys.argv[2] == "resta":
+        result = resta(operando1, operando2)
+    else:
+        sys.exit('Operación sólo puede ser sumar o restar.')
+
+    print(result)
