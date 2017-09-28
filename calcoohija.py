@@ -5,9 +5,7 @@ import sys
 import calcoo
 
 class CalculadoraHija(calcoo.Calculadora):
-	def __init__(self, arg):
-		pass
-
+	
 	def multiplica(self,operando1,operando2):
 		return operando1 * operando2
 
@@ -15,7 +13,7 @@ class CalculadoraHija(calcoo.Calculadora):
 		try:
 			return operando1 / operando2
 		except ZeroDivisionError:
-			sys.exit("No se puede dividir entre 0") 
+			sys.exit("Division by zero is not allowed") 
 
 if __name__ == '__main__':
 	try:
@@ -37,4 +35,4 @@ if __name__ == '__main__':
 	else:
 		sys.exit("El operador solo puede ser sumar,restar,multiplicar o dividir")
 
-	print ("El resultado de " + sys.argv +"es: ", (resultado))
+	print ("El resultado de " + sys.argv[2] +" es:",(resultado))
