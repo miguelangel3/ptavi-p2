@@ -17,17 +17,15 @@ def operacion (line):
 def tostring (line):
 	pass
 
-def readlines(file_descriptor):
+def calculalinea (file_descriptor):
 
 	for line in file_descriptor.readlines():
-		#operacion = line[:line.find(",")]
+		
 		calcular = line.split(",")
 
-		operación = 
+		operacion = calcular[0]
 
-
-
-		print (calcular)
+		print (operacion)
 
 if __name__ == '__main__':
 
@@ -35,6 +33,6 @@ if __name__ == '__main__':
 	dicionario = {}
 	operando = {}
 
-	readlines(file_descriptor)
+	calculalinea(file_descriptor)
 
 	#print (operacion)
