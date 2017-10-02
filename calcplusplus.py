@@ -25,12 +25,12 @@ def calcula_linea(file_descriptor):
 
         for calcula in calcular[2:]:
 
-            resultado = operacion(int(resultado),int(calcula))
+            resultado = operacion(int(resultado), int(calcula))
 
         print(resultado)
 
 if __name__ == '__main__':
 
-    with open(sys.argv[1],newline='') as csvfile:
+    with open(sys.argv[1], newline='') as csvfile:
         file_descriptor = csv.reader(csvfile)
         calcula_linea(file_descriptor)
