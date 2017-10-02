@@ -4,15 +4,9 @@
 import calcoohija
 import sys
 import csv
+from calcplus import cal
 
 calculadora = calcoohija.CalculadoraHija()
-
-cal = {
-    "suma": calculadora.suma,
-    "resta": calculadora.resta,
-    "multiplica": calculadora.multiplica,
-    "divide": calculadora.divide
-}
 
 
 def calcula_linea(file_descriptor):
