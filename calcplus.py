@@ -3,6 +3,7 @@
 
 
 import calcoohija
+import sys
 
 calculadora = calcoohija.CalculadoraHija()
 
@@ -30,6 +31,6 @@ def calcula_linea (file_descriptor):
 
 if __name__ == '__main__':
 
-	file_descriptor = open("fichero")
+	file_descriptor = open(sys.argv[1])
 	calcula_linea(file_descriptor)
 	file_descriptor.close()
