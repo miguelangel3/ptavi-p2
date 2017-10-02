@@ -21,7 +21,7 @@ if __name__ == '__main__':
         operando1 = int(sys.argv[1])
         operando2 = int(sys.argv[3])
     except ValueError:
-        sys.exit("Los operandos tienen que ser enteros")
+        sys.exit("Error: Non numerical parameters")
     operador = sys.argv[2]
 
     if operador == "suma":
