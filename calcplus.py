@@ -32,3 +32,4 @@ if __name__ == '__main__':
 
 	file_descriptor = open("fichero")
 	calcula_linea(file_descriptor)
+	file_descriptor.close()
