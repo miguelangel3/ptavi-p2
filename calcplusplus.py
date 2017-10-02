@@ -8,25 +8,29 @@ import csv
 calculadora = calcoohija.CalculadoraHija()
 
 cal = {
-    "suma":caculadora.suma,
-    "resta":calculadora.resta,
-    "multiplica":calculadora.multiplica,
-    "divide":calculadora.divide
+    "suma": calculadora.suma,
+    "resta": calculadora.resta,
+    "multiplica": calculadora.multiplica,
+    "divide": calculadora.divide
 }
 
-def calcula_linea(calcular):
 
-    resultado = int(calcular[1])
-    operacion = cal[calcular[0]]
+def calcula_linea(file_descriptor):
 
-    for calcula in calcular [2:]:
+    for line in file_descriptor:
 
-        resultado = operacion(int(resultado),int(calcula))
+        calcular = line
+        resultado = int(calcular[1])
+        operacion = cal[calcular[0]]
 
-    print (resultado)
+        for calcula in calcular[2:]:
+
+            resultado = operacion(int(resultado),int(calcula))
+
+        print(resultado)
 
 if __name__ == '__main__':
 
     with open(sys.argv[1],newline='') as csvfile:
-        calcular = csv.reader(csvfile)
-        calcula_linea(calcular)
+        file_descriptor = csv.reader(csvfile)
+        calcula_linea(file_descriptor)
