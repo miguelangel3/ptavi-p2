@@ -8,29 +8,29 @@ import sys
 calculadora = calcoohija.CalculadoraHija()
 
 cal = {
-	"suma":calculadora.suma,
-	"resta":calculadora.resta,
-	"multiplica":calculadora.multiplica,
-	"divide":calculadora.divide
+    "suma": calculadora.suma,
+    "resta": calculadora.resta,
+    "multiplica": calculadora.multiplica,
+    "divide": calculadora.divide
 }
 
 
-def calcula_linea (file_descriptor):
+def calcula_linea(file_descriptor):
 
-	for line in file_descriptor.readlines():
+    for line in file_descriptor.readlines():
 
-		calcular = line.split(",")
-		resultado = int(calcular[1])
-		operacion = cal[calcular[0]]
+        calcular = line.split(",")
+        resultado = int(calcular[1])
+        operacion = cal[calcular[0]]
 
-		for calcula in calcular [2:]:
+        for calcula in calcular[2:]:
 
-			resultado = operacion(int(resultado),int(calcula))
+            resultado = operacion(int(resultado), int(calcula))
 
-		print (resultado)
+        print(resultado)
 
 if __name__ == '__main__':
 
-	file_descriptor = open(sys.argv[1])
-	calcula_linea(file_descriptor)
-	file_descriptor.close()
+    file_descriptor = open(sys.argv[1])
+    calcula_linea(file_descriptor)
+    file_descriptor.close()
