@@ -16,10 +16,12 @@ class CalculadoraHija(calcoo.Calculadora):
         except ZeroDivisionError:
             sys.exit("Division by zero is not allowed")
 
+#calculadora = CalculadoraHija(calcoo.Calculadora) 
+
 if __name__ == '__main__':
     try:
-        operando1 = int(sys.argv[1])
-        operando2 = int(sys.argv[3])
+        operando1 = int(float(sys.argv[1]))
+        operando2 = int(float(sys.argv[3]))
     except ValueError:
         sys.exit("Error: Non numerical parameters")
     operador = sys.argv[2]

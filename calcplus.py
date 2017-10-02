@@ -24,9 +24,10 @@ def calcula_linea(file_descriptor):
         operacion = cal[calcular[0]]
 
         for calcula in calcular[2:]:
-
-            resultado = operacion(int(resultado), int(calcula))
-
+            try:
+                resultado = operacion(int(resultado), int(calcula))
+            except ValueError:
+                sys.exit("Error: Non numerical parameters")
         print(resultado)
 
 if __name__ == '__main__':
